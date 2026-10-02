@@ -31,31 +31,12 @@
       font-size: clamp(1.25rem, 3vw, 1.75rem);
       font-weight: 700;
     }
-    #timer {
-      margin-top: 1.5rem;
-      font-size: 1.25rem;
-    }
   </style>
 </head>
 <body>
   <main>
     <h1>Thanks for setting up your ACH.</h1>
     <p>You may now close this window.</p>
-    <p id="timer">5</p>
   </main>
-  <script>
-    var seconds = 5;
-    var timer = document.getElementById("timer");
-    var countdown = setInterval(function () {
-      seconds -= 1;
-      if (seconds > 0) {
-        timer.textContent = String(seconds);
-        return;
-      }
-      clearInterval(countdown);
-      timer.textContent = "0";
-      window.close();
-    }, 1000);
-  </script>
 </body>
 </html>
