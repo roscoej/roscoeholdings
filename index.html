@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roscoe Holdings Group, Inc. — Software and product consulting</title>
-  <meta name="description" content="Roscoe Holdings Group, Inc. is a software and product consulting firm in Cleveland, Ohio. We help companies plan, build, and run software products.">
+  <title>Roscoe Holdings Group, Inc.</title>
+  <meta name="description" content="Roscoe Holdings Group, Inc.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23d6281f'/%3E%3C/svg%3E">
   <style>
     :root {
-      --paper: oklch(98.2% 0.004 85);
-      --ink: oklch(17% 0.008 260);
-      --ink-soft: oklch(38% 0.008 260);
-      --rule: oklch(17% 0.008 260);
-      --red: oklch(57% 0.2 29);
-      --gutter: clamp(1.25rem, 3vw, 2.5rem);
-      --edge: clamp(1.25rem, 4vw, 4rem);
-      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --paper: oklch(98.4% 0.003 85);
+      --ink: oklch(14% 0.004 260);
+      --red: oklch(56% 0.215 29);
+      --edge: clamp(1.25rem, 4.5vw, 4.5rem);
+      --gap: clamp(1rem, 2vw, 2rem);
+      --heavy: clamp(8px, 1vw, 16px);
+      --display: min(11.4vw, 12rem);
+      --text: clamp(0.875rem, 0.84rem + 0.18vw, 1rem);
     }
 
     * {
@@ -24,500 +24,235 @@
 
     html {
       -webkit-text-size-adjust: 100%;
-      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: var(--edge);
       background: var(--paper);
       color: var(--ink);
-      font-family: var(--font);
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 700;
-      font-size: clamp(1rem, 0.94rem + 0.25vw, 1.125rem);
-      line-height: 1.45;
-      letter-spacing: -0.011em;
+      font-size: var(--text);
+      line-height: 1.35;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-    }
-
-    a {
-      color: inherit;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.18em;
-    }
-
-    a:hover {
-      color: var(--red);
-    }
-
-    a:focus-visible {
-      outline: 3px solid var(--red);
-      outline-offset: 3px;
-    }
-
-    .skip {
-      position: absolute;
-      left: var(--edge);
-      top: -4rem;
-      padding: 0.6rem 0.9rem;
-      background: var(--ink);
-      color: var(--paper);
-      text-decoration: none;
-    }
-
-    .skip:focus {
-      top: 1rem;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      column-gap: var(--gutter);
-      max-width: 90rem;
-      margin: 0 auto;
-      padding: 0 var(--edge);
+      column-gap: var(--gap);
     }
-
-    /* Masthead */
 
     .masthead {
-      padding-top: clamp(1.25rem, 2.5vw, 2rem);
+      border-top: var(--heavy) solid var(--ink);
+      padding-top: clamp(0.5rem, 1.2vw, 1.25rem);
     }
 
-    .masthead-inner {
+    .masthead h1 {
       grid-column: 1 / -1;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1.5rem;
-      padding-bottom: 0.9rem;
-      border-bottom: 3px solid var(--rule);
-    }
-
-    .wordmark {
-      font-size: 1rem;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .wordmark::before {
-      content: "";
-      display: inline-block;
-      width: 0.62em;
-      height: 0.62em;
-      margin-right: 0.5em;
-      background: var(--red);
-    }
-
-    .nav {
-      display: flex;
-      gap: clamp(1rem, 2.4vw, 2rem);
       margin: 0;
-      padding: 0;
-      list-style: none;
-      font-size: 0.9375rem;
-    }
-
-    .nav a {
-      text-decoration: none;
-    }
-
-    /* Hero */
-
-    .hero {
-      padding-top: clamp(4rem, 12vw, 11rem);
-      padding-bottom: clamp(3rem, 7vw, 6rem);
-    }
-
-    .hero h1 {
-      grid-column: 1 / span 11;
-      margin: 0;
-      font-size: clamp(3.25rem, 1.2rem + 8.6vw, 10.5rem);
-      line-height: 0.9;
-      letter-spacing: -0.055em;
+      font-size: var(--display);
       font-weight: 700;
+      line-height: 0.86;
+      letter-spacing: -0.055em;
     }
 
-    .hero h1 .dot {
-      color: var(--red);
-    }
-
-    .hero .lead {
-      grid-column: 7 / -1;
-      margin: clamp(2.5rem, 5vw, 4.5rem) 0 0;
-      max-width: 34ch;
-      font-size: clamp(1.25rem, 1rem + 0.9vw, 1.75rem);
-      line-height: 1.22;
-      letter-spacing: -0.022em;
-    }
-
-    /* Sections */
-
-    .section {
-      padding-top: clamp(1.25rem, 2vw, 1.75rem);
-      padding-bottom: clamp(4rem, 9vw, 8rem);
-    }
-
-    .section > .rule {
-      grid-column: 1 / -1;
-      height: 0;
-      border-top: 3px solid var(--rule);
-      margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
-    }
-
-    .label {
-      grid-column: 1 / span 3;
-      margin: 0;
-      font-size: 0.9375rem;
-      letter-spacing: -0.01em;
-    }
-
-    .label .num {
-      color: var(--red);
-      margin-right: 0.6em;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .body {
-      grid-column: 4 / -1;
-    }
-
-    .statement {
-      margin: 0 0 clamp(2.5rem, 5vw, 4rem);
-      max-width: 22ch;
-      font-size: clamp(1.75rem, 1.1rem + 2.4vw, 3.5rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-    }
-
-    /* Services */
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: var(--gutter);
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .services li {
-      padding: 1.1rem 0 clamp(2rem, 3.5vw, 3rem);
-      border-top: 1px solid var(--rule);
-    }
-
-    .services h3,
-    .policies h3 {
-      margin: 0 0 0.6rem;
-      font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    .services p,
-    .policies p,
-    .steps p {
-      margin: 0;
-      max-width: 40ch;
-      color: var(--ink-soft);
-    }
-
-    /* Engagements */
-
-    .steps {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      counter-reset: step;
-    }
-
-    .steps li {
-      display: grid;
-      grid-template-columns: 4.5rem minmax(0, 1fr);
-      column-gap: var(--gutter);
-      padding: 1.1rem 0 1.4rem;
-      border-top: 1px solid var(--rule);
-      counter-increment: step;
-    }
-
-    .steps li::before {
-      content: counter(step, decimal-leading-zero);
-      color: var(--red);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .steps strong {
+    .masthead h1 span {
       display: block;
-      margin-bottom: 0.3rem;
-      font-size: clamp(1.125rem, 1rem + 0.45vw, 1.375rem);
-      letter-spacing: -0.025em;
     }
 
-    /* Policies */
-
-    .policies {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      column-gap: var(--gutter);
+    .info {
+      align-content: end;
+      padding-top: clamp(3rem, 8vw, 7rem);
     }
 
-    .policies article {
-      padding-top: 1.1rem;
-      border-top: 1px solid var(--rule);
+    .mark {
+      grid-column: 12 / -1;
+      align-self: end;
+      justify-self: end;
+      width: clamp(1.25rem, 2.2vw, 2.25rem);
+      aspect-ratio: 1;
+      background: var(--red);
+      pointer-events: none;
+      will-change: transform;
     }
 
-    .policies p + p {
-      margin-top: 0.85rem;
+    .mark.is-paused {
+      animation: blink 1.06s steps(1, end) infinite;
     }
 
-    /* Contact */
-
-    .contact {
-      background: var(--ink);
-      color: var(--paper);
-      padding-top: clamp(1.25rem, 2vw, 1.75rem);
-      padding-bottom: clamp(4rem, 8vw, 7rem);
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
     }
 
-    .contact .rule {
+    @media (prefers-reduced-motion: reduce) {
+      .mark {
+        animation: none;
+      }
+    }
+
+    .base {
+      margin-top: clamp(2rem, 4vw, 3.5rem);
+      padding-top: 0.55rem;
+      border-top: var(--heavy) solid var(--ink);
+    }
+
+    .base p {
       grid-column: 1 / -1;
-      border-top: 3px solid var(--paper);
-      margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
-    }
-
-    .contact .label .num {
-      color: var(--red);
-    }
-
-    .office {
-      margin: 0 0 clamp(2.5rem, 5vw, 4rem);
-      font-style: normal;
-      font-size: clamp(2rem, 1rem + 4vw, 5rem);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-    }
-
-    .contact-details {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: var(--gutter);
       margin: 0;
     }
 
-    .contact-details div {
-      padding-top: 1rem;
-      border-top: 1px solid color-mix(in oklch, var(--paper) 45%, transparent);
-    }
-
-    .contact-details dt {
-      margin-bottom: 0.4rem;
-      color: color-mix(in oklch, var(--paper) 62%, var(--ink));
-      font-size: 0.875rem;
-    }
-
-    .contact-details dd {
-      margin: 0;
-    }
-
-    /* Footer */
-
-    .footer {
-      background: var(--ink);
-      color: color-mix(in oklch, var(--paper) 62%, var(--ink));
-      font-size: 0.875rem;
-    }
-
-    .footer-inner {
-      grid-column: 1 / -1;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.75rem 2rem;
-      padding: 1.25rem 0 2rem;
-      border-top: 1px solid color-mix(in oklch, var(--paper) 25%, transparent);
-    }
-
-    .footer p {
-      margin: 0;
-    }
-
-    /* Narrow */
-
-    @media (max-width: 56rem) {
-      .label,
-      .body,
-      .hero h1,
-      .hero .lead {
-        grid-column: 1 / -1;
-      }
-
-      .label {
-        margin-bottom: 1.75rem;
-      }
-
-      .policies,
-      .contact-details {
-        grid-template-columns: minmax(0, 1fr);
-        row-gap: 2rem;
-      }
-    }
-
-    @media (max-width: 40rem) {
-      .nav {
-        display: none;
-      }
-
-      .services {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .steps li {
-        grid-template-columns: 2.75rem minmax(0, 1fr);
+    @media (max-width: 48rem) {
+      :root {
+        --display: 15.5vw;
       }
     }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="masthead">
-    <div class="grid">
-      <div class="masthead-inner">
-        <a class="wordmark" href="/">Roscoe Holdings Group, Inc.</a>
-        <nav aria-label="Primary">
-          <ul class="nav">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#engagements">Engagements</a></li>
-            <li><a href="#policies">Policies</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+  <header class="masthead grid">
+    <h1>
+      <span>Roscoe Holdings</span>
+      <span>Group, Inc.</span>
+    </h1>
   </header>
 
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="grid">
-        <h1 id="hero-title">Software and product consulting<span class="dot">.</span></h1>
-        <p class="lead">Roscoe Holdings Group, Inc. helps companies plan, build, and run software products. We work with operators and technical teams on product strategy, engineering, and the systems behind them.</p>
-      </div>
-    </section>
-
-    <section id="services" class="section" aria-labelledby="services-title">
-      <div class="grid">
-        <div class="rule"></div>
-        <h2 id="services-title" class="label"><span class="num">01</span>Services</h2>
-        <div class="body">
-          <p class="statement">From the first plan to the system in production.</p>
-          <ul class="services">
-            <li>
-              <h3>Product strategy</h3>
-              <p>Discovery, roadmaps, and pricing for new and existing software products. We turn business goals into a plan a team can ship.</p>
-            </li>
-            <li>
-              <h3>Software development</h3>
-              <p>Design and build of web applications, internal tools, and APIs, from a first version through to production.</p>
-            </li>
-            <li>
-              <h3>Technical advisory</h3>
-              <p>Architecture reviews, technology selection, and hands-on guidance for founders and engineering leaders.</p>
-            </li>
-            <li>
-              <h3>Systems and integrations</h3>
-              <p>Payments, billing, and operations systems, connected to the tools a business already runs on.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="engagements" class="section" aria-labelledby="engagements-title">
-      <div class="grid">
-        <div class="rule"></div>
-        <h2 id="engagements-title" class="label"><span class="num">02</span>Engagements</h2>
-        <div class="body">
-          <p class="statement">Clear scope. Clear billing.</p>
-          <ol class="steps">
-            <li>
-              <div>
-                <strong>Written scope</strong>
-                <p>Every engagement starts with a written scope that sets out the work, the timeline, and the fees.</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Invoiced billing</strong>
-                <p>Work is billed by invoice, monthly or by milestone, as agreed in the scope. Each invoice states its due date.</p>
-              </div>
-            </li>
-            <li>
-              <div>
-                <strong>Secure payment</strong>
-                <p>We accept ACH bank debit, bank transfer, and card. Payments are processed through Stripe.</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section id="policies" class="section" aria-labelledby="policies-title">
-      <div class="grid">
-        <div class="rule"></div>
-        <h2 id="policies-title" class="label"><span class="num">03</span>Policies</h2>
-        <div class="body">
-          <p class="statement">Refunds, disputes, and cancellation.</p>
-          <div class="policies">
-            <article>
-              <h3>Refunds</h3>
-              <p>Fees cover work already performed and are not refundable once that work is delivered.</p>
-              <p>If an invoice contains an error, or you paid in advance for work that was not delivered, we refund the difference to the original payment method within 10 business days.</p>
-            </article>
-            <article>
-              <h3>Disputes</h3>
-              <p>If you have a question about a charge, contact us within 30 days of the invoice date. We will review it with you and respond within 5 business days.</p>
-              <p>Please contact us before disputing a payment with your bank so we can resolve it directly.</p>
-            </article>
-            <article>
-              <h3>Cancellation</h3>
-              <p>Either party may end an engagement with 30 days' written notice. Work performed through the end date is billed at the agreed rates, and prepaid fees for work not yet performed are refunded.</p>
-              <p>A standing ACH debit authorization may be revoked with 30 days' written notice.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+  <main class="info grid">
+    <span class="mark" aria-hidden="true"></span>
   </main>
 
-  <section id="contact" class="contact" aria-labelledby="contact-title">
-    <div class="grid">
-      <div class="rule"></div>
-      <h2 id="contact-title" class="label"><span class="num">04</span>Contact</h2>
-      <div class="body">
-        <address class="office">2132 East 9th Street<br>Cleveland, Ohio 44115</address>
-        <dl class="contact-details">
-          <div>
-            <dt>Hours</dt>
-            <dd>Monday to Friday<br>9 a.m. to 5 p.m. Eastern</dd>
-          </div>
-          <div>
-            <dt>Customer service</dt>
-            <dd>Questions about an invoice, a payment, or an engagement</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="grid">
-      <div class="footer-inner">
-        <p>© 2026 Roscoe Holdings Group, Inc.</p>
-        <p>Cleveland, Ohio</p>
-      </div>
-    </div>
+  <footer class="base grid">
+    <p>© 2026</p>
   </footer>
+
+  <script>
+    const mark = document.querySelector('.mark');
+    const court = document.querySelector('.masthead');
+    const baseline = document.querySelector('.base');
+    const PADDLE = 14;
+    const MAX_FRAME_MS = 32;
+
+    let home = null;
+    let bounds = null;
+    let x = 0;
+    let y = 0;
+    let vx = 0;
+    let vy = 0;
+    let paused = false;
+    let pointer = null;
+    let lastTime = null;
+
+    function measure() {
+      const previous = mark.style.transform;
+      mark.style.transform = 'none';
+      home = mark.getBoundingClientRect();
+      mark.style.transform = previous;
+
+      const area = court.getBoundingClientRect();
+      const ruleWidth = parseFloat(getComputedStyle(court).borderTopWidth) || 0;
+      bounds = {
+        left: area.left,
+        right: area.right - home.width,
+        top: area.top + ruleWidth,
+        bottom: baseline.getBoundingClientRect().top - home.height,
+      };
+    }
+
+    function speed() {
+      return Math.min(0.5, Math.max(0.18, (bounds.right - bounds.left) / 2800));
+    }
+
+    function clampPosition() {
+      x = Math.min(bounds.right, Math.max(bounds.left, x));
+      y = Math.min(bounds.bottom, Math.max(bounds.top, y));
+    }
+
+    function bounceOffWalls() {
+      if (x <= bounds.left) { x = bounds.left; vx = Math.abs(vx); }
+      if (x >= bounds.right) { x = bounds.right; vx = -Math.abs(vx); }
+      if (y <= bounds.top) { y = bounds.top; vy = Math.abs(vy); }
+      if (y >= bounds.bottom) { y = bounds.bottom; vy = -Math.abs(vy); }
+    }
+
+    function bounceOffPointer() {
+      if (!pointer) return;
+      const size = home.width;
+      const inside =
+        pointer.x >= x - PADDLE && pointer.x <= x + size + PADDLE &&
+        pointer.y >= y - PADDLE && pointer.y <= y + size + PADDLE;
+      if (!inside) return;
+
+      const dx = x + size / 2 - pointer.x;
+      const dy = y + size / 2 - pointer.y;
+      if (Math.abs(dx) > Math.abs(dy)) {
+        vx = Math.sign(dx || 1) * Math.abs(vx);
+      } else {
+        vy = Math.sign(dy || 1) * Math.abs(vy);
+      }
+    }
+
+    function render() {
+      mark.style.transform = `translate(${x - home.left}px, ${y - home.top}px)`;
+    }
+
+    function tick(time) {
+      const dt = lastTime === null ? 0 : Math.min(MAX_FRAME_MS, time - lastTime);
+      lastTime = time;
+
+      if (!paused) {
+        x += vx * dt;
+        y += vy * dt;
+        bounceOffWalls();
+        bounceOffPointer();
+        render();
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    function handlePointerMove(event) {
+      pointer = { x: event.clientX, y: event.clientY };
+    }
+
+    function handlePointerLeave() {
+      pointer = null;
+    }
+
+    function handlePointerDown() {
+      paused = !paused;
+      mark.classList.toggle('is-paused', paused);
+    }
+
+    function handleResize() {
+      measure();
+      const s = speed();
+      vx = Math.sign(vx) * s * 0.8;
+      vy = Math.sign(vy) * s * 0.6;
+      clampPosition();
+      render();
+    }
+
+    measure();
+    x = home.left;
+    y = home.top;
+    vx = -speed() * 0.8;
+    vy = -speed() * 0.6;
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      window.addEventListener('resize', handleResize);
+      document.addEventListener('pointermove', handlePointerMove);
+      document.addEventListener('pointerdown', handlePointerDown);
+      document.documentElement.addEventListener('pointerleave', handlePointerLeave);
+      requestAnimationFrame(tick);
+    }
+  </script>
 </body>
 </html>
